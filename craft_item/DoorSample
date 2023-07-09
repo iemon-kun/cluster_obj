@@ -28,7 +28,6 @@ $.onInteract(() => {
         $.state.isOpen = !$.state.isOpen;
         $.state.animate = true;
         $.state.startTime = currentTime;
-        const rot = new Quaternion().setFromAxisAngle(axis, $.state.isOpen ? minRot : maxRot);
     }
 });
 
