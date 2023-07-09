@@ -1,0 +1,61 @@
+// 子オブジェクトのstarを取得
+const page1 = $.subNode("1page");
+const page2 = $.subNode("2page");
+const front = $.subNode("front");
+const back = $.subNode("back");
+
+// 定数などの設定
+const axis = new Vector3(0,0,1);
+const minRot = 160;
+const maxRot = 0;
+const animationTime = 0.35;
+let currentTime = 0;
+
+// 使用時の処理
+let i = 0;
+$.onUse((isDown) => {
+    if(!isDown){
+        if(!$.state.animate){  
+            i ++;
+            $.state.animate = true;
+            $.state.startTime = currentTime;
+        }
+    }
+});
+
+// 時間処理
+$.onUpdate(deltaTime => {
+    if(!$.state.inisialized){
+        $.state.inisialized = true;
+        $.state.isDown = false;
+        $.state.animate = false;
+    }
+    if($.state.animate === true){
+        currentTime += deltaTime;
+        let nowRote = (currentTime - $.state.startTime) / animationTime;
+        let min = new Quaternion().setFromAxisAngle(axis, maxRot);
+        let max = new Quaternion().setFromAxisAngle(axis, minRot);
+        
+        if(i === 1){
+            page1.setRotation(min.clone().slerp(max, nowRote));
+            front.setRotation(min.clone().slerp(max, nowRote));
+        }else if(i === 2){
+            page2.setRotation(min.clone().slerp(max, nowRote));
+            back.setRotation(min.clone().slerp(max, nowRote));
+        }else if(i === 3){
+            page1.setRotation(max.clone().slerp(min, nowRote));
+            page2.setRotation(max.clone().slerp(min, nowRote));
+            front.setRotation(max.clone().slerp(min, nowRote));
+            back.setRotation(max.clone().slerp(min, nowRote));
+        }
+        //$.log(`${nowRote * 100}％`);
+        if(nowRote >= 1){
+            $.state.animate = false;
+            $.state.startTime = 0;
+            if(i === 3){
+                i = 0;
+            }
+            //$.log("アニメーション終了");
+        }
+    }
+});
