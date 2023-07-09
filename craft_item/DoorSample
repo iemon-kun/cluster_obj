@@ -35,8 +35,8 @@ $.onInteract(() => {
 $.onUpdate(deltaTime => {
     if(!$.state.inisialized){
         $.state.inisialized = true;
-        $.state.isOpen = false;
-        $.state.animate = false;
+        $.state.isOpen ??= false;
+        $.state.animate ??= false;
     }
     if($.state.animate === true){
         currentTime += deltaTime;
