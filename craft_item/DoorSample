@@ -9,10 +9,11 @@ DoorTest
 const shaft = $.subNode("Shaft");
 
 // 定数などの設定
+const minRot = 0; // ドアが閉じている状態の角度
+const maxRot = -90; // ドアが開いた状態の角度
+const animationTime = 0.5; // 開閉の動作にかける時間（秒）
+
 const axis = new Vector3(0, 1, 0);
-const minRot = 0;
-const maxRot = -90;
-const animationTime = 0.5;
 let elapsedTime = 0;
 
 // インタラクト時の処理
