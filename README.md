@@ -8,3 +8,10 @@ clusterのアイテム用に書いたスクリプトなどを保管します。
 
 ### DoorSample.js
 インタラクトするとアニメーション開閉するドアのサンプルスクリプト。開閉の角度は９０度。
+
+## 参考URLなど
+【スクリプトリファレンス】
+https://docs.cluster.mu/script/modules.html
+
+【クリエイターズガイド スクリプト関連記事一覧】
+https://creator.cluster.mu/category/script/
