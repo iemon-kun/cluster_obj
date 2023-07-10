@@ -1,33 +1,25 @@
 /* 
-【スクリプトリファレンス】
-https://docs.cluster.mu/script/modules.html
-
-【クリエイターズガイド スクリプト関連記事一覧】
-https://creator.cluster.mu/category/script/
-
 【アイテム構造】
 DoorTest
 ┗ Shaft
-　┗ Cube
+ ┗ Door
 */
 
 // 子オブジェクトのstarを取得
 const shaft = $.subNode("Shaft");
-const cube = $.subNode("Cube");
 
 // 定数などの設定
 const axis = new Vector3(0, 1, 0);
 const minRot = 0;
 const maxRot = -90;
 const animationTime = 0.5;
-let currentTime = 0;
+let elapsedTime = 0;
 
 // インタラクト時の処理
 $.onInteract(() => {
     if(!$.state.animate){
         $.state.isOpen = !$.state.isOpen;
         $.state.animate = true;
-        $.state.startTime = currentTime;
     }
 });
 
@@ -37,18 +29,21 @@ $.onUpdate(deltaTime => {
         $.state.inisialized = true;
         $.state.isOpen ??= false;
         $.state.animate ??= false;
+        shaft.setRotation($.state.shaftRot ?? shaft.getRotation());
     }
     if($.state.animate === true){
-        currentTime += deltaTime;
-        let nowRote = (currentTime - $.state.startTime) / animationTime;
+        elapsedTime += deltaTime;
+        let nowRote = elapsedTime / animationTime;
         let min = new Quaternion().setFromAxisAngle(axis, $.state.isOpen ? minRot : maxRot);
         let max = new Quaternion().setFromAxisAngle(axis, !$.state.isOpen ? minRot : maxRot);
         shaft.setRotation(min.clone().slerp(max, nowRote));
         //$.log(`${nowRote * 100}％`);
         if(nowRote >= 1){
             $.state.animate = false;
-            $.state.startTime = 0;
+            elapsedTime = 0;
+            $.state.shaftRot = shaft.getRotation();
             //$.log("アニメーション終了");
         }
     }
+    // $.log(elapsedTime);
 });
