@@ -5,7 +5,7 @@ DoorTest
  ┗ Door
 */
 
-// 子オブジェクトのstarを取得
+// 子オブジェクトを取得
 const shaft = $.subNode("Shaft");
 
 // 定数などの設定
