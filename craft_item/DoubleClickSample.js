@@ -27,10 +27,10 @@ $.onUpdate(deltaTime => {
         $.state.elapsedTime += deltaTime;
         if ($.state.elapsedTime >= delay) {
             if ($.state.clickCount === 1) {
-                // シングルクリックがされたときの処理を書く
+                // シングルクリックされたときの処理を書く
                 $.log("シングルクリックされました。");
             } else if($.state.clickCount === 2){
-                // シングルクリックがされたときの処理を書く
+                // ダブルクリックされたときの処理を書く
                 $.log("ダブルクリックされました。");
             } else {
                 // 想定回数以上のクリックがあった場合の処理を書く
