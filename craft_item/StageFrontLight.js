@@ -1,15 +1,13 @@
-// 子オブジェクトのstarを取得
+// 子オブジェクトを取得
 const rootObj = $.subNode("Lightroot");
 const blueObj = $.subNode("Blue");
 const redObj= $.subNode("Red");
 const greenObj = $.subNode("Green");
 
-//初期化
-//let previousHour = null;
+// 定数などの設定
 let count = $.state.count;
 if(count == null) count = 0;
 
-//$.log(rand);
 //インタラクト時の処理
 $.onInteract(() => {
   count += 1;
