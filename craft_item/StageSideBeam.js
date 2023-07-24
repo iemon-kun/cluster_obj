@@ -1,6 +1,6 @@
 // 子オブジェクトを取得
 const allObj = $.subNode("All");
-const BeamOnObj = $.subNode("BeamOn");
+const beamOnObj = $.subNode("BeamOn");
 const beamsObj = $.subNode("Beams");
 const beamLObj= $.subNode("BeamL");
 const beamRObj = $.subNode("BeamR");
@@ -12,7 +12,7 @@ const axis = new Vector3(0.0, 0.0, 1.0);
 // インタラクト時の処理
 $.onInteract(() => {
   $.state.enabled = !$.state.enabled;
-  BeamOnObj.setEnabled($.state.enabled);
+  beamOnObj.setEnabled($.state.enabled);
 })
 
 // 時間処理
@@ -20,7 +20,7 @@ $.onUpdate(deltaTime => {
   // 初期化
   if (!$.state.initialized) {
     $.state.initialized = true;
-    $.state.enabled = BeamOnObj.getEnabled();
+    $.state.enabled = beamOnObj.getEnabled();
   }
 
   // スイッチオンの状態のとき、ビームを回転させる
