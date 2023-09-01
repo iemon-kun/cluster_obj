@@ -10,7 +10,7 @@ clusterのアイテム用に書いたスクリプトなどを保管します。
 クリックとダブルクリックで別種の処理をしたいときのサンプルスクリプト。
 
 ### NPCTakeUploadedV1.js
-ナプコタケ(1年後の姿)(https://cluster.mu/store/items/5169552f-8390-4355-b46c-3c4c4430223b)に使用しているスクリプト。
+ナプコタケ(1年後の姿)(https://cluster.mu/store/items/5169552f-8390-4355-b46c-3c4c4430223b　)に使用しているスクリプト。
 理論上はメッシュを使い回せば人型のNPCも作れる。
 
 ### NyanBox.js
@@ -18,11 +18,11 @@ clusterのアイテム用に書いたスクリプトなどを保管します。
 インタラクト（クリックorタップ)でさまざまな操作ができる疑似乗り物。
 
 ### StageLight.js
-ステージライト（フロント)(https://cluster.mu/store/items/d2db41f2-ef4c-4c8c-a0c0-f086a91a6ada)に使用しているスクリプト。
+ステージライト（フロント)(https://cluster.mu/store/items/d2db41f2-ef4c-4c8c-a0c0-f086a91a6ada　)に使用しているスクリプト。
 インタラクトで光をオンオフ。
 
 ### StageSideBeam.js
-ステージライト(サイドビーム)(https://cluster.mu/store/items/f70d42b8-09bc-48d7-bc41-d9778fc9adc1)に使用しているスクリプト。
+ステージライト(サイドビーム)(https://cluster.mu/store/items/f70d42b8-09bc-48d7-bc41-d9778fc9adc1　)に使用しているスクリプト。
 インタラクトで光をオンオフ。
 
 ### yukihurashi.js
