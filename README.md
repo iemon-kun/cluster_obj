@@ -25,6 +25,9 @@ clusterのアイテム用に書いたスクリプトなどを保管します。
 ステージライト(サイドビーム)(https://cluster.mu/store/items/f70d42b8-09bc-48d7-bc41-d9778fc9adc1 )に使用しているスクリプト。
 インタラクトで光をオンオフ。
 
+### Create sendMessagewithRestTime.js
+休憩を置ながら近くのアイテムにメッセージをおくるサンプルコード
+
 ### yukihurashi.js
 雪ふらし（https://cluster.mu/store/items/e6eb029f-6b02-4828-af6b-71d02fee9285 ）に使用しているスクリプト。
 インタラクト（クリックorタップ)すると左前方四方10mの範囲に雪を降らせる。
